@@ -16,7 +16,11 @@ export const ApiContextProvider = ({ children, baseURL }) => {
     };
     const get = (path) => {
         return api.get(path, createHeaders());
+    
     };
-    return <ApiContext.Provider value={{ get }}>{children}</ApiContext.Provider>;
+    const post =(path,payload)=>{
+        return api.post(path,payload,createHeaders())
+    }
+    return <ApiContext.Provider value={{ get,post }}>{children}</ApiContext.Provider>;
     
 }

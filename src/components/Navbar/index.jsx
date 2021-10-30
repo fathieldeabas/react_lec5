@@ -34,6 +34,9 @@ export const Navbar =()=> {
                   Login
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <button className="btn btn-danger" > logout</button>
+              </li>
             </ul>
           </div>
         </nav>

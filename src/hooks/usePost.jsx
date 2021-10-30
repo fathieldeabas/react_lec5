@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { ApiContext } from "../contexts";
 
-export const useGetPosts = () => {
+export const usePostPosts = () => {
     const apiContext = useContext(ApiContext);
-    return async () => {
-    const { data } = await apiContext.get("/posts");
-    return data;
+    return async (body) => {
+    await apiContext.post("/posts",body);
+
     };
 };

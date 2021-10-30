@@ -1,13 +1,15 @@
 import { users } from "./users.js";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../../contexts";
+import { useContext,  } from "react";
 export const Users = () => {
   const history = useHistory();
+  const authContext = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     //Dummy code
-    
-        localStorage.removeItem("token", "12345");
+    authContext.logout()
       //   history.push("/main-page");
         history.replace("/login");
 };

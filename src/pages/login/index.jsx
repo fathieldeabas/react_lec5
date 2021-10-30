@@ -11,12 +11,13 @@ export const Login =()=>{
 const handleSubmit = (event) => {
     event.preventDefault();
     //Dummy code
-    if (authContext.login(email,password)) history.replace("/users");
+    if (authContext.login(email,password)){ history.replace("/users");
+        console.log(authContext.isLoggedIn)
+    }
       //   history.push("/main-page");
-        
     else setIsValidCred(false);
-
     };
+    if (authContext.isLoggedIn ) history.replace("/post");
     const item =localStorage.getItem("token")
     if (item){
     history.replace("/users");
