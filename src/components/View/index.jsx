@@ -6,12 +6,7 @@ return (
         <button className="btn btn-danger m-2" onClick={props.onDelete}>
             delete all of list
         </button>
-        {props.sups.map((s)=>(< Sup title={s.title}/>))}
-
-
-
-
-
+        {props.sups.map((s ,i)=>(< Sup key={i} title={s.title}/>))}
 
 
 
